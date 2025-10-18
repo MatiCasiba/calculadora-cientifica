@@ -54,4 +54,17 @@ public class Operacion {
 			default -> false;
 		};
 	}
+	
+	//getters
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public double[] getOperandos() {
+		return operandos.clone();
+	}
+	
+	public double getResultado() {
+		return resultado;
+	}
 }
