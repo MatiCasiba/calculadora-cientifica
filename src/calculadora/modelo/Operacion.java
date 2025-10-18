@@ -47,4 +47,11 @@ public class Operacion {
 		}
 		return resultado;
 	}
+	
+	public boolean esBinaria() {
+		return switch(nombre) {
+			case "suma","resta","multipliacion","divison","potencia" -> true;
+			default -> false;
+		};
+	}
 }
