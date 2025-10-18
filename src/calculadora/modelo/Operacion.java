@@ -8,7 +8,7 @@ public class Operacion {
 	public Operacion(String nombre, double... operandos) {
 		this.nombre = nombre.toLowerCase().trim();
 		this.operandos = operandos.clone();
-		
+		verificarIREP();
 	}
 	
 	public double calcular() {
@@ -46,6 +46,21 @@ public class Operacion {
 				throw new IllegalArgumentException("Operación desconocida: " + nombre);
 		}
 		return resultado;
+	}
+	
+	private void verificarIREP() {
+		if(nombre == null || nombre.isEmpty()) {
+			throw new IllegalArgumentException("El nombre de la operación no puede sr nulo o vacío");
+		}
+		if(operandos == null || operandos.length < 1) {
+			throw new IllegalArgumentException("Debe haber al menos un operando");
+		}
+		if(nombre.equals("division") && operandos.length > 1 && operandos[1] == 0) {
+			throw new IllegalArgumentException("No se puede dividir por cero");
+		}
+		if((nombre.equals("raiz") || nombre.equals("logaritmo")) && operandos[0] < 0) {
+			throw new IllegalArgumentException("El operando debe ser mayor o igual a cero para " + nombre);
+		}
 	}
 	
 	public boolean esBinaria() {
