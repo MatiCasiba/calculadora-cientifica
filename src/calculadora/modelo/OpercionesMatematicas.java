@@ -25,6 +25,13 @@ public class OpercionesMatematicas {
 		return Math.pow(a, b);
 	}
 	
+	public static double raiz(double a) {
+		if(a < 0) {
+			throw new IllegalArgumentException("no se puede calcular");
+		}
+		return Math.sqrt(a);
+	}
+	
 	public static double seno(double a) {
 		return Math.sin(a);
 	}
