@@ -70,6 +70,17 @@ public class Operacion {
 		};
 	}
 	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(nombre).append("(");
+		for(int i = 0; i < operandos.length; i++) {
+			sb.append(operandos[i]);
+			if(i < operandos.length - 1) sb.append(", ");
+		}
+		sb.append(") = ").append(resultado);
+		return sb.toString();
+	}
+	
 	//getters
 	public String getNombre() {
 		return nombre;
