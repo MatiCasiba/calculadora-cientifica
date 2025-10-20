@@ -20,6 +20,13 @@ public class HistorialOperaciones {
 		verificarIREP();
 	}
 	
+	public Operacion obtenerUltima() {
+		if(lista.isEmpty()) {
+			return null;
+		}
+		return lista.get(lista.size()-1);
+	}
+	
 	private void verificarIREP() {
 		if(lista == null) {
 			throw new IllegalStateException("La lista de operaciones no puede ser nula");
