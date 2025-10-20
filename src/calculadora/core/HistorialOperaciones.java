@@ -38,6 +38,10 @@ public class HistorialOperaciones {
 		}
 	}
 	
+	public void limpiar() {
+		lista.clear();
+	}
+	
 	private void verificarIREP() {
 		if(lista == null) {
 			throw new IllegalStateException("La lista de operaciones no puede ser nula");
