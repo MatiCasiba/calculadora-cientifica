@@ -5,7 +5,15 @@ public class Memoria {
 	
 	public Memoria() {
 		this.valor = null;
-		
+		verificarIREP();
+	}
+	
+	public void guardar(double v) {
+		if(Double.isNaN(v) || Double.isInfinite(v)) {
+			throw new IllegalArgumentException("El valor guardado debe ser un número real válido");
+		}
+		this.valor = v;
+		verificarIREP();
 	}
 	
 	private void verificarIREP() {
