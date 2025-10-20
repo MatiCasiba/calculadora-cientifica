@@ -9,5 +9,17 @@ public class HistorialOperaciones {
 	
 	public HistorialOperaciones() {
 		this.lista = new ArrayList<>();
+		verificarIREP();
+	}
+	
+	private void verificarIREP() {
+		if(lista == null) {
+			throw new IllegalStateException("La lista de operaciones no puede ser nula");
+		}
+		for(Operacion op : lista) {
+			if(op == null) {
+				throw new IllegalStateException("El historial contiene una operación nula");
+			}
+		}
 	}
 }
