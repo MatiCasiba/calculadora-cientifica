@@ -12,6 +12,14 @@ public class HistorialOperaciones {
 		verificarIREP();
 	}
 	
+	public void agregar(Operacion op) {
+		if(op == null) {
+			throw new IllegalArgumentException("No se puede agregar una operación nula al historial");
+		}
+		lista.add(op);
+		verificarIREP();
+	}
+	
 	private void verificarIREP() {
 		if(lista == null) {
 			throw new IllegalStateException("La lista de operaciones no puede ser nula");
