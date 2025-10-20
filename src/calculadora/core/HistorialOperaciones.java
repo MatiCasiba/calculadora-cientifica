@@ -27,6 +27,17 @@ public class HistorialOperaciones {
 		return lista.get(lista.size()-1);
 	}
 	
+	public void mostrarTodas() {
+		if(lista.isEmpty()) {
+			System.out.println("El historial está vacío");
+			return;
+		}
+		System.out.println("Historial de operaciones");
+		for(int i = 0; i < lista.size(); i++) {
+			System.out.println((i+1) + ". " + lista.get(i).toString());
+		}
+	}
+	
 	private void verificarIREP() {
 		if(lista == null) {
 			throw new IllegalStateException("La lista de operaciones no puede ser nula");
