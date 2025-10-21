@@ -16,6 +16,10 @@ public class Memoria {
 		verificarIREP();
 	}
 	
+	public boolean estaVacia() {
+		return this.valor == null;
+	}
+	
 	private void verificarIREP() {
 		if(valor != null) {
 			if(Double.isNaN(valor) || Double.isInfinite(valor)) {
