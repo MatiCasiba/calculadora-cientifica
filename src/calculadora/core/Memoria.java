@@ -23,6 +23,10 @@ public class Memoria {
 		return valor;
 	}
 	
+	public void borrar() {
+		this.valor = null;
+	}
+	
 	public boolean estaVacia() {
 		return this.valor == null;
 	}
