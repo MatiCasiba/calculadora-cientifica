@@ -38,4 +38,8 @@ public class Memoria {
 			}
 		}
 	}
+	
+	public String toString() {
+		return estaVacia() ? "[Memoria vacía]" : "[Memoria: " + valor + " ]";
+	}
 }
