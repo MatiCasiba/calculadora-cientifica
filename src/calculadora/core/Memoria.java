@@ -16,6 +16,13 @@ public class Memoria {
 		verificarIREP();
 	}
 	
+	public double recuperar() {
+		if(estaVacia()) {
+			throw new IllegalStateException("La memoria está vacía");
+		}
+		return valor;
+	}
+	
 	public boolean estaVacia() {
 		return this.valor == null;
 	}
