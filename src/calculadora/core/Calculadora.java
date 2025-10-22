@@ -13,5 +13,18 @@ public class Calculadora {
 		this.memoria = new Memoria();
 		this.historial = new HistorialOperaciones();
 		this.operaciones = new OpercionesMatematicas();
+		verificarIREP();
+	}
+	
+	private void verificarIREP() {
+		if(Double.isNaN(pantalla) || Double.isInfinite(pantalla)) {
+			throw new IllegalStateException("La pantalla contiene un valor no válido");
+		}
+		if(memoria == null){
+			throw new IllegalStateException("La memoria no puede ser nula");
+		}
+		if(historial == null) {
+			throw new IllegalStateException("El historial no puede ser nulo");
+		}
 	}
 }
