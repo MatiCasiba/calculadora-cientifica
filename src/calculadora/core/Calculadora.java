@@ -104,4 +104,13 @@ public class Calculadora {
 			throw new IllegalStateException("El historial no puede ser nulo");
 		}
 	}
+	
+	//devuelve el valor actual de la pantalla
+	public double getPantalla() {
+		return pantalla;
+	}
+	
+	public String toString() {
+		return "[Pantlla: " + "] "+ memoria.toString();
+	}
 }
