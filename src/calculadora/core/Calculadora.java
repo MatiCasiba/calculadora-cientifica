@@ -1,5 +1,6 @@
 package calculadora.core;
 
+import calculadora.modelo.Operacion;
 import calculadora.modelo.OpercionesMatematicas;
 
 public class Calculadora {
@@ -21,6 +22,52 @@ public class Calculadora {
 			throw new IllegalArgumentException("El númmero ingresado no es válido");
 		}
 		this.pantalla = n;
+		verificarIREP();
+	}
+	
+	public void aplicarOperacion(Operacion op) {
+		if(op == null) {
+			throw new IllegalArgumentException("La operación no puede ser nula");
+		}
+		double resultado;
+		switch(op.getNombre().toLowerCase()) {
+		case "suma":
+			resultado = operaciones.sumar(op.getOperandos()[0], op.getOperandos()[1]);
+			break;
+		case "resta":
+			resultado = operaciones.restar(op.getOperandos()[0], op.getOperandos()[1]);
+			break;
+		case "multiplicacion":
+			resultado = operaciones.multiplicar(op.getOperandos()[0], op.getOperandos()[1]);
+			break;
+		case "division":
+			resultado = operaciones.dividir(op.getOperandos()[0], op.getOperandos()[1]);
+			break;
+		case "potencia":
+			resultado = operaciones.potencia(op.getOperandos()[0], op.getOperandos()[1]);
+			break;
+		case "raiz":
+			resultado = operaciones.raiz(op.getOperandos()[0]);
+			break;
+		case "seno":
+			resultado = operaciones.seno(op.getOperandos()[0]);
+			break;
+		case "coseno":
+			resultado = operaciones.coseno(op.getOperandos()[0]);
+			break;
+		case "log":
+		case "logaritmo":
+			resultado = operaciones.logaritmo(op.getOperandos()[0]);
+			break;
+		case "factorial":
+			resultado = operaciones.factorial((int) op.getOperandos()[0]);
+			break;
+		default:
+			throw new IllegalArgumentException("Operación no reconocida: " + op.getNombre());
+		}
+		op.setResultado(resultado);
+		historial.agregar(op);
+		this.pantalla = resultado;
 		verificarIREP();
 	}
 	
