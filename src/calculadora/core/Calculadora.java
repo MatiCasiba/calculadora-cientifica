@@ -16,6 +16,14 @@ public class Calculadora {
 		verificarIREP();
 	}
 	
+	public void ingresarNumero(double n) {
+		if(Double.isNaN(n) || Double.isInfinite(n)) {
+			throw new IllegalArgumentException("El númmero ingresado no es válido");
+		}
+		this.pantalla = n;
+		verificarIREP();
+	}
+	
 	private void verificarIREP() {
 		if(Double.isNaN(pantalla) || Double.isInfinite(pantalla)) {
 			throw new IllegalStateException("La pantalla contiene un valor no válido");
