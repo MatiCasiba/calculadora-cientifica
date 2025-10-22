@@ -89,6 +89,10 @@ public class Calculadora {
 		pantalla = 0.0;
 	}
 	
+	public void mostrarHistorial() {
+		historial.mostrarTodas();
+	}
+	
 	private void verificarIREP() {
 		if(Double.isNaN(pantalla) || Double.isInfinite(pantalla)) {
 			throw new IllegalStateException("La pantalla contiene un valor no válido");
