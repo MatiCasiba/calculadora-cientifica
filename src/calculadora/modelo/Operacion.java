@@ -93,4 +93,9 @@ public class Operacion {
 	public double getResultado() {
 		return resultado;
 	}
+	
+	//setter
+	public void setResultado(double resultado) {
+		this.resultado = resultado;
+	}
 }
