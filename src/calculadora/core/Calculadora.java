@@ -75,6 +75,12 @@ public class Calculadora {
 		memoria.guardar(pantalla);
 	}
 	
+	public double recuperarMemoria() {
+		double valor = memoria.recuperar();
+		pantalla = valor;
+		return valor;
+	}
+	
 	private void verificarIREP() {
 		if(Double.isNaN(pantalla) || Double.isInfinite(pantalla)) {
 			throw new IllegalStateException("La pantalla contiene un valor no válido");
