@@ -81,6 +81,14 @@ public class Calculadora {
 		return valor;
 	}
 	
+	public void borrarMemoria() {
+		memoria.borrar();
+	}
+	
+	public void limpiar() {
+		pantalla = 0.0;
+	}
+	
 	private void verificarIREP() {
 		if(Double.isNaN(pantalla) || Double.isInfinite(pantalla)) {
 			throw new IllegalStateException("La pantalla contiene un valor no válido");
