@@ -71,6 +71,10 @@ public class Calculadora {
 		verificarIREP();
 	}
 	
+	public void guardarEnMemoria() {
+		memoria.guardar(pantalla);
+	}
+	
 	private void verificarIREP() {
 		if(Double.isNaN(pantalla) || Double.isInfinite(pantalla)) {
 			throw new IllegalStateException("La pantalla contiene un valor no válido");
